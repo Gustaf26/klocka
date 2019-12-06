@@ -33,6 +33,10 @@ funcion countdown con setInterval restando cada segundo
 
 let countdownEl = document.querySelector('#countdown');
 let nyTime = document.querySelector('#nytime');
+let julEL =  document.querySelector('#jultid');
+let jul = moment('25/12/2019', 'DD/MM/YYYY');
+let endofdayEl = document.querySelector('#actualmoment');
+//let mom = moment('MMMM Do YYYY, h:mm:ss a');
 
 
 const updateCountdown = () =>{
@@ -40,6 +44,14 @@ const updateCountdown = () =>{
 nytid = moment().endOf('year').fromNow();
 
 nyTime.innerText = nytid;
+
+julTid = jul.endOf('day').fromNow();
+
+julEL.innerText=julTid;
+
+actual = moment().endOf('day').fromNow();
+
+endofdayEl.innerText=actual;
 
 return nyTime;
 

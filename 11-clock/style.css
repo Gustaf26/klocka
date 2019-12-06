@@ -23,6 +23,12 @@ body {
 	font-size: 1.5em;
 	font-weight: 500;
 }
+
+#endofday {font-weight: 100;}
+
+#actualmoment {font-size: 1.5em;
+	font-weight: 500;}
+
 #countdown {font-weight: 100;
 	font-size: 2em;}
 
@@ -30,7 +36,9 @@ body {
 	font-size: 1.5em;
 	font-weight: 500;
 	}
-
+#jultid {font-size: 1.5em;
+	font-weight: 500;
+}
 
 #clock .separator {
 	visibility: visible;
