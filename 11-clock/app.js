@@ -10,18 +10,30 @@ let actualTime = document.querySelector('#time');
 
 let date = document.querySelector('#date');
 
+date.innerText=moment().format('MMMM DD YYYY');
+
 let now = "";
 
-const updateClock = () => {
+const updateClockOne = () => {
 
-    actualTime.innerText= moment().format('LTS');
-    date.innerText=moment().format('MMMM DD YYYY');
+    actualTime.innerText= moment().format('hh mm ss');
 
     now = actualTime.innerText;
      
 }
 
-clockEl = setInterval(updateClock,1000);
+const updateClockTwo = () => {
+
+    actualTime.innerText= moment().format('hh:mm:ss');
+
+    now = actualTime.innerText;
+     
+}
+
+
+clockEl = setInterval(updateClockOne,500), setInterval(updateClockTwo,1000);
+
+
 
 // COUNTDOWN TO NEW YEAR
 
@@ -55,7 +67,7 @@ actual = moment().endOf('day').fromNow();
 
 endofdayEl.innerText=actual;
 
-return nyTime;
+//return nytid, julTid, actual;
 
 }
 
