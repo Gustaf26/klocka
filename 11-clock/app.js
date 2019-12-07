@@ -8,11 +8,14 @@ let clockEl = document.querySelector('#clock');
 
 let actualTime = document.querySelector('#time');
 
-let now = moment().format('MMMM Do YYYY, h:mm:ss a');
+let date = document.querySelector('#date');
+
+let now = "";
 
 const updateClock = () => {
 
-    actualTime.innerText= moment().add(1, 'second');
+    actualTime.innerText= moment().format('LTS');
+    date.innerText=moment().format('MMMM DD YYYY');
 
     now = actualTime.innerText;
      
@@ -34,18 +37,17 @@ funcion countdown con setInterval restando cada segundo
 let countdownEl = document.querySelector('#countdown');
 let nyTime = document.querySelector('#nytime');
 let julEL =  document.querySelector('#jultid');
-let jul = moment('25/12/2019', 'DD/MM/YYYY');
 let endofdayEl = document.querySelector('#actualmoment');
-//let mom = moment('MMMM Do YYYY, h:mm:ss a');
 
 
 const updateCountdown = () =>{
 
-nytid = moment().endOf('year').fromNow();
+nytid = moment('31/12/2019', 'DD/MM/YYYY').endOf('DD').fromNow();
 
 nyTime.innerText = nytid;
 
-julTid = jul.endOf('day').fromNow();
+
+julTid = moment('25/12/2019', 'DD/MM/YYYY').endOf('DD').fromNow();
 
 julEL.innerText=julTid;
 
