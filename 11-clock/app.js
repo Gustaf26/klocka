@@ -10,8 +10,8 @@ let clockEl = document.querySelector('#clock');
 let hoursEl = document.querySelector('#hour');
 let minutesEl = document.querySelector('#minutes');
 let secondsEl = document.querySelector('#seconds');
-let separatorsEL = document.querySelector('.separator');
-let separatorsELTwo = document.querySelector('.separatortwo');
+let separatorsEL = document.querySelectorAll('.separator');
+//let separatorsELTwo = document.querySelector('.separatortwo');
 
 
 
@@ -29,14 +29,14 @@ const updateClockOne = () => {
 
 const updateSeparators = () => {
 
-separatorsEL.classList.toggle('hidden');
-separatorsELTwo.classList.toggle('hidden');
+    separatorsEL.forEach(function (separator) {
 
-     
+        separator.classList.toggle('hidden');
+    })
 }
 
 
-clockEl = setInterval(updateClockOne,500), setInterval(updateSeparators,1000);
+clockEl = setInterval(updateClockOne,1000), setInterval(updateSeparators,1000);
 
 
 
@@ -70,10 +70,12 @@ julEL.innerText=julTid;
 
 actual = moment().endOf('day').fromNow();
 
+/*now = moment().format();
+later = moment(2020, 01, 01);
+i = Interval.fromDateTimes(now, later);*/
+
+
 endofdayEl.innerText=actual;
-
-//return nytid, julTid, actual;
-
 }
 
 countdownEl = setInterval(updateCountdown,1000);
