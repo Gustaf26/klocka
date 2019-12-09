@@ -40,10 +40,14 @@ body {
 	font-weight: 500;
 }
 
-#clock .separator {
+.separator {
 	visibility: visible;
 }
 
-#clock .separator.hidden {
+.separator.hidden {
+	visibility: hidden;
+}
+
+.separatortwo.hidden {
 	visibility: hidden;
 }

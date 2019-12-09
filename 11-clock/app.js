@@ -1,37 +1,42 @@
 /**
  * Dates and Time.
+ * 
+ * file:///C:/Program%20Files%20(x86)/Ampps/www/javascript/johans%20klocka/11-clock/index.html
  *
  */
 
 
 let clockEl = document.querySelector('#clock');
+let hoursEl = document.querySelector('#hour');
+let minutesEl = document.querySelector('#minutes');
+let secondsEl = document.querySelector('#seconds');
+let separatorsEL = document.querySelector('.separator');
+let separatorsELTwo = document.querySelector('.separatortwo');
 
-let actualTime = document.querySelector('#time');
+
 
 let date = document.querySelector('#date');
-
-date.innerText=moment().format('MMMM DD YYYY');
 
 let now = "";
 
 const updateClockOne = () => {
 
-    actualTime.innerText= moment().format('hh mm ss');
-
-    now = actualTime.innerText;
+    hoursEl.innerText=moment().format('hh');
+    minutesEl.innerText=moment().format('mm');
+    secondsEl.innerText=moment().format('ss');
      
 }
 
-const updateClockTwo = () => {
+const updateSeparators = () => {
 
-    actualTime.innerText= moment().format('hh:mm:ss');
+separatorsEL.classList.toggle('hidden');
+separatorsELTwo.classList.toggle('hidden');
 
-    now = actualTime.innerText;
      
 }
 
 
-clockEl = setInterval(updateClockOne,500), setInterval(updateClockTwo,1000);
+clockEl = setInterval(updateClockOne,500), setInterval(updateSeparators,1000);
 
 
 
