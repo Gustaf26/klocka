@@ -1,7 +1,7 @@
 /**
  * Dates and Time.
  * 
- * file:///C:/Program%20Files%20(x86)/Ampps/www/javascript/johans%20klocka/11-clock/index.html
+ * 
  *
  */
 
@@ -11,7 +11,6 @@ let hoursEl = document.querySelector('#hour');
 let minutesEl = document.querySelector('#minutes');
 let secondsEl = document.querySelector('#seconds');
 let separatorsEL = document.querySelectorAll('.separator');
-//let separatorsELTwo = document.querySelector('.separatortwo');
 
 
 
@@ -38,6 +37,9 @@ const updateSeparators = () => {
 
 clockEl = setInterval(updateClockOne,1000), setInterval(updateSeparators,1000);
 
+
+
+
 //Addar eventlistener på button
 
 let studietidEl = document.querySelector('#studietid');
@@ -48,7 +50,7 @@ let nedrakningEl = document.querySelector('#nedrakning');
 
 
 let tid = studietidEl.value;
-let count=moment('00:00:00', 'hh:mm:ss').format();
+let count=moment('00:00:00', 'h:mm:ss').format();
 let timer = moment(count).add(tid, 'hour');
 let timerTwo = "";
 
@@ -88,10 +90,6 @@ julTid = moment('25/12/2019', 'DD/MM/YYYY').endOf('DD').fromNow();
 julEL.innerText=julTid;
 
 actual = moment().endOf('day').fromNow();
-
-/*now = moment().format();
-later = moment(2020, 01, 01);
-i = Interval.fromDateTimes(now, later);*/
 
 
 endofdayEl.innerText=actual;
