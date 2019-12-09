@@ -26,6 +26,12 @@ body {
 
 #endofday {font-weight: 100;}
 
+.studierubrik {font-size: 2em;
+	font-weight: 100;}
+
+#startatimer {margin-top:1rem;
+	width:100%;}
+
 #actualmoment {font-size: 1.5em;
 	font-weight: 500;}
 

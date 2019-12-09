@@ -38,18 +38,37 @@ const updateSeparators = () => {
 
 clockEl = setInterval(updateClockOne,1000), setInterval(updateSeparators,1000);
 
+//Addar eventlistener på button
+
+let studietidEl = document.querySelector('#studietid');
+
+let buttonEl = document.querySelector('#startatimer');
+
+let nedrakningEl = document.querySelector('#nedrakning');
 
 
-// COUNTDOWN TO NEW YEAR
+let tid = studietidEl.value;
+let count=moment('00:00:00', 'hh:mm:ss').format();
+let timer = moment(count).add(tid, 'hour');
+let timerTwo = "";
 
-//Kolla setINterval(t);
-// moment().format();
+const updateNedrakning = function() {
 
-/*definir fecha del 31 a las 23:59:59
+timerTwo = moment(timer).subtract(1, 'second');
 
-funcion countdown con setInterval restando cada segundo
+nedrakningEl.innerText = timerTwo.format('h:mm:ss');
 
-*/
+timer = timerTwo;
+
+};
+
+buttonEl.addEventListener('click', function ups() {
+
+    setInterval(updateNedrakning,1000);
+});
+
+
+// Gör countdwon till nyår / jul
 
 let countdownEl = document.querySelector('#countdown');
 let nyTime = document.querySelector('#nytime');
