@@ -1,7 +1,5 @@
 /**
  * Dates and Time.
- * 
- * 
  *
  */
 
@@ -45,12 +43,12 @@ clockEl = setInterval(updateClockOne,1000), setInterval(updateSeparators,1000);
 let studietidEl = document.querySelector('#studietid');
 
 let buttonEl = document.querySelector('#startatimer');
-
+let buttonTwoEl = document.querySelector('#reset');
 let nedrakningEl = document.querySelector('#nedrakning');
 
 
 let tid = studietidEl.value;
-let count=moment('00:00:00', 'h:mm:ss').format();
+let count=moment('00:00:00', 'hh:mm:ss').format();
 let timer = moment(count).add(tid, 'hour');
 let timerTwo = "";
 
@@ -58,7 +56,7 @@ const updateNedrakning = function() {
 
 timerTwo = moment(timer).subtract(1, 'second');
 
-nedrakningEl.innerText = timerTwo.format('h:mm:ss');
+nedrakningEl.innerText = timerTwo.format('hh:mm:ss');
 
 timer = timerTwo;
 
@@ -67,6 +65,22 @@ timer = timerTwo;
 buttonEl.addEventListener('click', function ups() {
 
     setInterval(updateNedrakning,1000);
+    setTimeout(greeting, 30000);
+    setTimeout(greeting_two, 60000);
+});
+
+const greeting = function () {alert("You have studied 30 secs, well done!")};
+
+const greeting_two = function () {alert("You are a real champion")};
+
+
+
+buttonTwoEl.addEventListener('dblclick', function reset() {
+
+   tid = studietidEl.value;
+
+  timer = moment(count).add(tid, 'hour');    
+   
 });
 
 
